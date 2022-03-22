@@ -14,6 +14,6 @@ changeBuildType(RelativeId("Build")) {
     }
     artifactRules = """
         /tmp/log.html
-        /tmp/reports.html
+        /tmp/report.html
     """.trimIndent()
 }
