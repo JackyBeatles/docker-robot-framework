@@ -19,7 +19,7 @@ changeProject(DslContext.projectId) {
                 title = "report"
                 startPage = "report.html"
                 buildType = "DockerRobotFramework_Build"
-                sourceBuildRule = ProjectReportTab.SourceBuildRule.LAST_SUCCESSFUL
+                sourceBuildRule = ProjectReportTab.SourceBuildRule.LAST_PINNED
                 sourceBuildBranchFilter = "+:<default>"
             }
         }
