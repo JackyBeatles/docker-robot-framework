@@ -40,7 +40,7 @@ object Build : BuildType({
         val workdir = "%teamcity.agent.home.dir%"
         script {
             name = "Robot Test"
-            scriptContent = "echo %workdir%"
+            scriptContent = "echo test"
         }
     }
     triggers {
