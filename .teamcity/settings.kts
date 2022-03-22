@@ -39,7 +39,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "%teamcity.agent.work.dir%"
+            scriptContent = "echo '%teamcity.agent.work.dir%'"
         }
     }
     triggers {
