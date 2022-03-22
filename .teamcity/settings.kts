@@ -2,29 +2,6 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
-
-/*
-The settings script is an entry point for defining a TeamCity
-project hierarchy. The script should contain a single call to the
-project() function with a Project instance or an init function as
-an argument.
-
-VcsRoots, BuildTypes, Templates, and subprojects can be
-registered inside the project using the vcsRoot(), buildType(),
-template(), and subProject() methods respectively.
-
-To debug settings scripts in command-line, run the
-
-    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
-
-command and attach your debugger to the port 8000.
-
-To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
--> Tool Windows -> Maven Projects), find the generate task node
-(Plugins -> teamcity-configs -> teamcity-configs:generate), the
-'Debug' option is available in the context menu for the task.
-*/
-
 version = "2021.2"
 
 project {
@@ -41,7 +18,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "docker run --rm --shm-size=1g -e BROWSER=firefox -v %system.teamcity.build.checkoutDir%/test:/opt/robotframework/tests ppodgorsek/robot-framework:latest"
+            scriptContent = "docker run --rm --shm-size=1g -e BROWSER=firefox -v %system.teamcity.build.checkoutDir%/test:/opt/robotframework/tests  %system.teamcity.build.checkoutDir%/test:/opt/robotframework/reports ppodgorsek/robot-framework:latest"
             
         }
     }
