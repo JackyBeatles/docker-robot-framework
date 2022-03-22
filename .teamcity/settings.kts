@@ -37,9 +37,10 @@ object Build : BuildType({
         root(DslContext.settingsRoot)
     }
     steps {
+        val workdir = "%teamcity.agent.home.dir%"
         script {
             name = "Robot Test"
-            scriptContent = "echo teamcity.agent.home.dir = %teamcity.agent.home.dir%"
+            scriptContent = "echo %workdir%"
         }
     }
     triggers {
