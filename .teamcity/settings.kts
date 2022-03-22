@@ -36,7 +36,12 @@ object Build : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
-
+    steps {
+        script {
+            name = "Robot Test"
+            scriptContent = "echo %teamcity.agent.work.dir%"
+        }
+    }
     triggers {
         vcs {
         }
