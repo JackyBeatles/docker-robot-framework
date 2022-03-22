@@ -1,5 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -39,7 +41,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "echo Build Successful"
+            scriptContent = "echo %teamcity.agent.work.dir%"
         }
     }
     triggers {
