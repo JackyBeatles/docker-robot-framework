@@ -41,7 +41,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "docker run --shm-size=1g -e BROWSER=firefox -v %teamcity.agent.work.dir%/test:/opt/robotframework/tests -v %teamcity.agent.work.dir%/report:/opt/robotframework/reports ppodgorsek/robot-framework:latest"
+            scriptContent = "docker run --rm--shm-size=1g -e BROWSER=firefox  ppodgorsek/robot-framework:latest"
         }
     }
     triggers {
