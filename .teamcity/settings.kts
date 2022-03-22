@@ -39,7 +39,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "echo 'Hello'"
+            scriptContent = "echo Build Successful"
         }
     }
     triggers {
