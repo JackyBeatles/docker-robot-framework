@@ -41,7 +41,7 @@ object Build : BuildType({
     steps {
         script {
             name = "Robot Test"
-            scriptContent = "ls -lt  %teamcity.agent.work.dir%/test"
+            scriptContent = "ls -lt  %system.teamcity.build.checkoutDir%/test"
         }
     }
     triggers {
